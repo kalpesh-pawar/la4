@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>
+
+  </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+
+
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+
+    /* Set black background color, white text and some padding */
+    footer {
+    position:absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #555;
+    color: white;
+    padding: 10px;
+    }
+
+    .page-holder{
+      min-height: 100vh;
+      }
+
+    .bg-cover{
+      background-size: cover !important;
+    }
+    body{
+      padding-top: 65px;
+        background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;}
+    }
+  </style>
+</head>
+<body >
+
+<nav  class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">kp,s Dinosaur Museum</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li {%if request.path=='/about'%}class="active"{%endif%}><a href="#">About</a></li>
+        <li {%if request.path=='/contact'%}class="active"{%endif%}><a href="#">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+          <li {%if request.path=='/login'%}class="active"{%endif%}><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          <li {%if request.path=='/register'%}class="active"{%endif%}><a href="register.html"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="col-sm-8 text-left">
+      <h1    align="center">Welcome to Kp's Dino Museum</h1>
+      <hr>
+          <div class="container">
+        <div id="loginbox" style="margin-top:5 0px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <div class="panel panel-info" >
+                    <div class="panel-heading">
+                        <div class="panel-title">Register</div>
+                    </div>
+
+                <div style="padding-top:30px" class="panel-body" ></div>
+
+                        <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+                    <form method="post" action="login.html" class="form-horizontal" class="px-4 py-3" >
+                <fieldset>
+                    <div >
+                        <label for="Username">Username:</label><br>
+                        <input class="form-control" type="text" id="Username" name="Username">
+                    </div><br>
+                    <div >
+                        <label for="Email">Email</label><br>
+                        <input class="form-control" type="text" id="Email" name="Email">
+                    </div><br>
+                    <div>
+                        <label for="Pass">Password</label><br>
+                        <input class="form-control" type="text" id="Pass" name="Pass">
+                    </div><br>
+                    <div >
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </div>
+
+                </fieldset>
+            </form>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+</html>
